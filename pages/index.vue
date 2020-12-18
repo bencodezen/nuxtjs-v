@@ -20,7 +20,7 @@
           GitHub
         </a>
         <button @click="callServerlessFunction">
-          Call Function v2
+          Call Function v3
         </button>
       </div>
     </div>

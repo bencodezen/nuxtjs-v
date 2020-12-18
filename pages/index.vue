@@ -9,11 +9,7 @@
         My astonishing Nuxt.js project
       </h2>
       <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
+        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
           Documentation
         </a>
         <a
@@ -23,6 +19,9 @@
         >
           GitHub
         </a>
+        <button @click="callServerlessFunction">
+          Call Function v2
+        </button>
       </div>
     </div>
   </div>
@@ -34,6 +33,15 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
+  },
+  methods: {
+    callServerlessFunction() {
+      fetch('/api/hello-world?name=boop')
+        .then(response => response.json())
+        .then(realResponse => {
+          console.log(realResponse)
+        })
+    }
   }
 }
 </script>
